@@ -1,11 +1,22 @@
-<div>
-    <h1><a href="/">Menu</a></h1>
-</div>
+{% load static %}
+<html>
+    <head>
+        <title>Menu</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">Menu</a></h1>
+        </div>
 
-{% for dish in dishes %}
-    <div>
-        <p>appeared in menu: {{ dish.created_date }}</p>
-        <h1><a href="">{{ dish.title }}</a></h1>
-        <p>{{ dish.cost }}</p>
-    </div>
-{% endfor %}
+        {% for dish in dishes %}
+            <div>
+                <p>created: {{ dish.created_date }}</p>
+                <h1><a href="">{{ dish.title }}</a></h1>
+                <p>{{ dish.cost }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>

@@ -2,12 +2,14 @@ from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Ingridient, Dish, IngridientOfDish
+from datetime import timezone
 
 from .serializers import DishSerializer
 
 
 def dish_list(request):
-    dishes = Dish.objects.filter(published_date__lte=timezone.now()).order_by('created_date')
+    dishes = Dish.objects.all()
+    # dishes = Dish.objects.filter(published_date__lte=timezone.now()).order_by('created_date')
     return render(request, 'restaurant/dish_list.html', {'dishes': dishes})
 
 
