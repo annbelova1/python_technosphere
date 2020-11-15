@@ -1,0 +1,11 @@
+<div>
+    <h1><a href="/">Menu</a></h1>
+</div>
+
+{% for dish in dishes %}
+    <div>
+        <p>appeared in menu: {{ dish.created_date }}</p>
+        <h1><a href="">{{ dish.title }}</a></h1>
+        <p>{{ dish.cost }}</p>
+    </div>
+{% endfor %}
