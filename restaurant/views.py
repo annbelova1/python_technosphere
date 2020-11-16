@@ -1,10 +1,18 @@
 from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import Ingridient, Dish, IngridientOfDish
 from datetime import timezone
 
 from .serializers import DishSerializer
+
+
+def login(request):
+    return render(request, 'restaurant/login.html')
+@login_required
+def home(request):
+    return render(request, 'restaurant/home.html')
 
 
 def dish_list(request):

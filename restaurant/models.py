@@ -12,15 +12,8 @@ class Ingridient(models.Model):
     fat = models.IntegerField()
     carbohydrates = models.IntegerField()
 
-
-
-    # def publish(self):
-    #     self.published_date = timezone.now()
-    #     self.save()
-
     def __str__(self):
         return self.title
-
 
 
 
@@ -28,6 +21,7 @@ class Dish(models.Model):
     title = models.CharField(max_length=200)
     created_date = models.DateTimeField(default=timezone.now)
     cost = models.IntegerField()
+    photo = models.ImageField(upload_to='media/', default='media/cat.jpeg')
 
     def __str__(self):
         return self.title
