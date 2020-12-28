@@ -18,8 +18,7 @@
                     {% for dish in dishes %}
                         <div class="dish">
                             <div class="date">
-                                <h1><a href="">{{ dish.title }}</a></h1>
-                                
+                                <h1><a href="{% url 'dish_detail' pk=dish.pk %}">{{ dish.title }}</a></h1>                                
                             </div>
                             <p> Появилось в меню: {{ dish.created_date }}</p>
                             <p>Стоимость: {{ dish.cost}} рублей</p>

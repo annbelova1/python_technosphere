@@ -1,0 +1,14 @@
+<!-- templates/dish_detail.html -->
+{% extends 'restaurant/base.html' %}
+
+{% block content %}
+    <div class="dish">
+        {% if dish.created_date %}
+            <div class="date">
+                {{ dish.created_date }}
+            </div>
+        {% endif %}
+        <h1>{{ dish.title }}</h1>
+        <p>{{ dish.cost }}</p>
+    </div>
+{% endblock %}

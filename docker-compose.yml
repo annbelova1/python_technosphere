@@ -1,0 +1,19 @@
+hometask:
+  build: .
+  environment:
+    MYENV: EXAMPLE
+  volumes:
+    - ./myfirstsite
+web_migrate:
+  extends:
+    service: hometask
+  command: python manage.py migrate
+web_run:
+  extends:
+    service: hometask
+  command: python manage.py runserver 0.0.0.0:8000
+  ports:
+    - "8000:8000"
+
+
+
